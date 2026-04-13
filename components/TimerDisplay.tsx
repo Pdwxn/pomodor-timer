@@ -57,7 +57,7 @@ export function TimerDisplay({ formattedTime, progress, mode, isRunning }: Timer
         <div className="absolute flex flex-col items-center">
           <span
             className={`
-              font-mono text-6xl font-bold tracking-tight tabular-nums
+              font-mono text-5xl font-bold tracking-tight tabular-nums
               text-neutral-900 dark:text-neutral-50
               ${isRunning ? "animate-pulse-slow" : ""}
             `}
