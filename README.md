@@ -1,37 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pomodoro Timer
 
-## Getting Started
+Una aplicación web minimalista para gestionar sesiones de enfoque con la técnica Pomodoro. Incluye modos de foco, descanso corto y descanso largo, contador de pomodoros completados, progreso visual y soporte para tema claro/oscuro.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Puedes probar la app aquí:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[https://pomodor-timer-flame.vercel.app/](https://pomodor-timer-flame.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Características
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Temporizador Pomodoro con sesiones de **25 minutos** de foco.
+* Descansos cortos de **5 minutos**.
+* Descansos largos de **15 minutos** cada **4 pomodoros**.
+* Selector de modo: foco, descanso corto y descanso largo.
+* Controles para iniciar, pausar y reiniciar el temporizador.
+* Anillo de progreso animado.
+* Estadísticas del día con contador de pomodoros completados.
+* Persistencia básica en `localStorage`.
+* Título dinámico en la pestaña del navegador mientras el temporizador está activo.
+* Sonido de aviso al completar una sesión.
+* Tema claro/oscuro con detección de preferencia del sistema.
+* Diseño responsive y limpio con Tailwind CSS.
 
-## Learn More
+## Tecnologías utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+* [Next.js](https://nextjs.org/)
+* [React](https://react.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [next-themes](https://github.com/pacocoursey/next-themes)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cómo funciona
 
-## Deploy on Vercel
+La lógica principal del temporizador está centralizada en el hook `usePomodoTimer`. Este hook maneja:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# pomodor-timer
+* Estado del temporizador mediante `useReducer`.
+* Inicio, pausa, reinicio y cambio de modo.
+* Transición automática entre foco, descanso corto y descanso largo.
+* Persistencia del progreso en `localStorage`.
+* Actualización del título de la pestaña.
+* Aviso sonoro al finalizar cada bloque.
